@@ -1,0 +1,24 @@
+<wicket:extend>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	
+	<form wicket:id="filterForm">
+		Name: <input type="text" class="form-control" wicket:id="filterName"/>
+
+			<table class="dataview table table-hover" wicket:id="tableWithFilterForm">[table]</table>
+		</form>
+	<br><br><br>
+	<fieldset>
+		<form wicket:id="addTestForm">
+			<legend>Test hinzufügen </legend>
+			<div class="form-group">
+			<p><span>Name:</span></p>
+			<p><input class="form-control" type="text" wicket:id="testNameInput"/></p><br>
+			</div>
+			<div class="form-group">
+			<input class="btn btn-success" type="submit" wicket:id="submit" style="float: right"/>
+			</div>
+		</form>
+	</fieldset>
+	
+	<div wicket:id="confirmDeleteDialog"></div>
+</wicket:extend>

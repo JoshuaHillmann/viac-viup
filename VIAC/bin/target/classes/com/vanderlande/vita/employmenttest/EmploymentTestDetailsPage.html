@@ -1,0 +1,44 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<h4>Planung:</h4>
+		Testname: <input type="text" class="form-control" wicket:id="testName"/><br>
+		Datum:<div wicket:id="testDate"/><br>
+		Raum:<input type="text" class="form-control" wicket:id="testRoom"/><br>
+
+		<input type="button" class="btn btn-success" wicket:id="finishTest" style="float: right" value="Test abschließen"/>
+		<input type="button" class="btn btn-success" wicket:id="saveTest" style="float: right" value="Test speichern"/>
+		<input type="button" class="btn btn-warning" wicket:id="sendEmail" style="float: right" value="Einladung an alle Bewerber versenden"/>
+		<input type="button" class="btn btn-warning" wicket:id="generateDataLink" style="float: right" value="Testdaten generien">
+		
+		<br><br>
+		
+		<h4>Test-Teilnehmer:</h4>
+		<table class="dataview table table-hover" wicket:id="testApplicantsTable">[table]</table>
+		<h4>Mögliche Teilnehmer:</h4>
+		<table class="dataview table table-hover" wicket:id="allOpenApplicantsTable">[table]</table>
+		
+		<br><br>
+		
+		<h4>Mögliche Planungsassistenten:</h4>
+		<span wicket:id="group">
+				<ul style="list-style-type: none;">
+					<li wicket:id="possibleDelegates">
+						<input type="radio" wicket:id="radio"/>
+						<span wicket:id="delegateName"></span>
+					</li>
+				</ul>
+		</span>
+		<input type="button" class="btn btn-warning" wicket:id="delegateTest" value="Planung delegieren"/>
+	</form>
+	<br><br>
+	<h4>ELIGO-Testergebnisse hochladen</h4>
+	<p>
+		Die Ergebnisse werden den Teilnehmern automatisch hinzugefügt werden. Der Dateiname braucht folgendes Format:<br>
+		<b>Eligo_ElgioUsername.pdf</b>
+	</p>
+	<form wicket:id="eligoFileUploadForm">
+		<div wicket:id="fileInput" />
+		<input wicket:id="uploadButton" class="btn btn-success" type="submit" value="Upload EligoFiles"/>
+	</form>
+	
+</wicket:extend>

@@ -1,0 +1,310 @@
+drop DATABASE viac;
+CREATE DATABASE viac;
+
+use viac;
+
+--
+-- Datenbank: `viac`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `hibernate_sequences`
+--
+
+CREATE TABLE `hibernate_sequences` (
+  `sequence_name` varchar(255) NOT NULL,
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `viacauthorization`
+--
+
+CREATE TABLE `viacauthorization` (
+  `authId` bigint(20) NOT NULL,
+  `authCheckName` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `viacrole`
+--
+
+CREATE TABLE `viacrole` (
+  `roleId` bigint(20) NOT NULL,
+  `changedOn` datetime DEFAULT NULL,
+  `createdOn` datetime DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `changedBy_userId` bigint(20) DEFAULT NULL,
+  `createdBy_userId` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `viacrole_viacauthorization`
+--
+
+CREATE TABLE `viacrole_viacauthorization` (
+  `VIACRole_roleId` bigint(20) NOT NULL,
+  `authorizations_authId` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `viacuser`
+--
+
+CREATE TABLE `viacuser` (
+  `userId` bigint(20) NOT NULL,
+  `changedOn` datetime DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `createdOn` datetime DEFAULT NULL,
+  `dayOfBirth` datetime DEFAULT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `postalCode` int(11) NOT NULL,
+  `road` varchar(255) DEFAULT NULL,
+  `changedBy_userId` bigint(20) DEFAULT NULL,
+  `createdBy_userId` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `viacuserpasswordreset`
+--
+
+CREATE TABLE `viacuserpasswordreset` (
+  `id` bigint(20) NOT NULL,
+  `createdOn` datetime DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `user_userId` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur f�r Tabelle `viacuser_viacrole`
+--
+
+CREATE TABLE `viacuser_viacrole` (
+  `VIACUser_userId` bigint(20) NOT NULL,
+  `roles_roleId` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes f�r die Tabelle `hibernate_sequences`
+--
+ALTER TABLE `hibernate_sequences`
+  ADD PRIMARY KEY (`sequence_name`);
+
+--
+-- Indizes f�r die Tabelle `viacauthorization`
+--
+ALTER TABLE `viacauthorization`
+  ADD PRIMARY KEY (`authId`);
+
+--
+-- Indizes f�r die Tabelle `viacrole`
+--
+ALTER TABLE `viacrole`
+  ADD PRIMARY KEY (`roleId`),
+  ADD KEY `FKbnqc19rsed11j9davs5mwrtyx` (`changedBy_userId`),
+  ADD KEY `FK5631u963i3l2yurmwqy2b84xv` (`createdBy_userId`);
+
+--
+-- Indizes f�r die Tabelle `viacrole_viacauthorization`
+--
+ALTER TABLE `viacrole_viacauthorization`
+  ADD PRIMARY KEY (`VIACRole_roleId`,`authorizations_authId`),
+  ADD KEY `FKsilm71moxtt7v3ioy8966d8pn` (`authorizations_authId`);
+
+--
+-- Indizes f�r die Tabelle `viacuser`
+--
+ALTER TABLE `viacuser`
+  ADD PRIMARY KEY (`userId`),
+  ADD KEY `FKequ7prpm9oq8s42o8jjt4cx4r` (`changedBy_userId`),
+  ADD KEY `FK5spe0tjiw4cvwo3c8prkdb7h1` (`createdBy_userId`);
+
+--
+-- Indizes f�r die Tabelle `viacuserpasswordreset`
+--
+ALTER TABLE `viacuserpasswordreset`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKgx25flaiqvmui208v85aqiopw` (`user_userId`);
+
+--
+-- Indizes f�r die Tabelle `viacuser_viacrole`
+--
+ALTER TABLE `viacuser_viacrole`
+  ADD PRIMARY KEY (`VIACUser_userId`,`roles_roleId`),
+  ADD KEY `FKm4nsv6m3l2ap3i4wsbo1wyclw` (`roles_roleId`);
+
+--
+-- AUTO_INCREMENT f�r exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT f�r Tabelle `viacauthorization`
+--
+ALTER TABLE `viacauthorization`
+  MODIFY `authId` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT f�r Tabelle `viacuser`
+--
+ALTER TABLE `viacuser`
+  MODIFY `userId` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT f�r Tabelle `viacuserpasswordreset`
+--
+ALTER TABLE `viacuserpasswordreset`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints der exportierten Tabellen
+--
+
+--
+-- Constraints der Tabelle `viacrole`
+--
+ALTER TABLE `viacrole`
+  ADD CONSTRAINT `FK5631u963i3l2yurmwqy2b84xv` FOREIGN KEY (`createdBy_userId`) REFERENCES `viacuser` (`userId`),
+  ADD CONSTRAINT `FKbnqc19rsed11j9davs5mwrtyx` FOREIGN KEY (`changedBy_userId`) REFERENCES `viacuser` (`userId`);
+
+--
+-- Constraints der Tabelle `viacrole_viacauthorization`
+--
+ALTER TABLE `viacrole_viacauthorization`
+  ADD CONSTRAINT `FKsilm71moxtt7v3ioy8966d8pn` FOREIGN KEY (`authorizations_authId`) REFERENCES `viacauthorization` (`authId`),
+  ADD CONSTRAINT `FKt55j5gp5n1tn4fdfkpn2da85n` FOREIGN KEY (`VIACRole_roleId`) REFERENCES `viacrole` (`roleId`);
+
+--
+-- Constraints der Tabelle `viacuser`
+--
+ALTER TABLE `viacuser`
+  ADD CONSTRAINT `FK5spe0tjiw4cvwo3c8prkdb7h1` FOREIGN KEY (`createdBy_userId`) REFERENCES `viacuser` (`userId`),
+  ADD CONSTRAINT `FKequ7prpm9oq8s42o8jjt4cx4r` FOREIGN KEY (`changedBy_userId`) REFERENCES `viacuser` (`userId`);
+
+--
+-- Constraints der Tabelle `viacuserpasswordreset`
+--
+ALTER TABLE `viacuserpasswordreset`
+  ADD CONSTRAINT `FKgx25flaiqvmui208v85aqiopw` FOREIGN KEY (`user_userId`) REFERENCES `viacuser` (`userId`);
+
+--
+-- Constraints der Tabelle `viacuser_viacrole`
+--
+ALTER TABLE `viacuser_viacrole`
+  ADD CONSTRAINT `FK5o1oei8s132gx1vjt93iuvliv` FOREIGN KEY (`VIACUser_userId`) REFERENCES `viacuser` (`userId`),
+  ADD CONSTRAINT `FKm4nsv6m3l2ap3i4wsbo1wyclw` FOREIGN KEY (`roles_roleId`) REFERENCES `viacrole` (`roleId`);
+
+  
+-- Daten einf�gen
+
+INSERT INTO `viacauthorization` (`authId`, `authCheckName`, `description`, `name`) VALUES
+(1,	'viac_view',			'Erlaubt das Anzeigen der Hauptseite',				'VIAC Ansicht'),
+(2,	'viac_view_admin',		'Erlaubt das Anzeigen der Admin-Oberfl�che',		'VIAC Administrator'),
+(3,	'viac_user_create',		'Erlaubt das Erstellen von neuen User-Accounts',	'VIAC Nutzer Anlage'),
+(4,	'viac_user_change',		'Erlaubt das �ndern von User-Accounts',				'VIAC Nutzer �ndern'),
+(5,	'viac_user_delete',		'Erlaubt das Entfernen von User-Accounts',			'VIAC Nutzer L�schen'),
+(6,	'vita_view',			'Erlaubt das Anzeigen des VITA Modules',			'VITA Modul Ansicht'),
+(7,	'vita_create',			'Erlaubt das Anlegen von Bewerbern',				'VITA Bewerber Anlage'),
+(8,	'vita_change',			'Erlaubt das �ndern von Bewerbern',					'VITA Bewerber �ndern'),
+(9,	'vita_delete',			'Erlaubt das L�schen von Bewerbern',				'VITA Bewerber L�schen'),
+(10,'vita_test_generate',	'Erlaubt das Erstellen von Test-Export-Daten',		'VITA Testdaten Generieren');
+
+INSERT INTO `viacuser`
+(`userId`, `changedOn`, `createdOn`, 			`dayOfBirth`, 	`firstname`, 	`lastname`, `name`, 					`password`, 	`changedBy_userId`, `createdBy_userId`) VALUES
+(1,			null,		'2016-12-10 11:00:00',	'1976-05-18',	'Michael',		'Lamb',		'admin',					'admin',        null, 				null),
+(2,			null,		'2016-12-10 11:00:00',	'1993-06-20',	'Gina',			'Gant',		'user',						'user',	        null, 				1),
+(3,			null,		'2016-12-10 11:00:00',	'1952-03-17',	'Charles',		'Allen',	'CharlesMAllen@teleworm.us','bu6ahZoGoo0',	null, 				1),
+(4,			null,		'2016-12-10 11:00:00',	'1988-02-22',	'Ira',			'Brooks',	'IraMBrooks@jourrapide.com','waikeiQuee7',	null, 				1),
+(5,			null,		'2016-12-10 11:00:00',	'1970-12-22',	'Joshua',		'Scott',	'JoshuaNScott@teleworm.us',	'Ku1ceerepa',	null, 			    1),
+(6,			null,		'2016-12-10 11:00:00',	'1940-03-01',	'Holly',		'Miller',	'HollyCMiller@rhyta.com',	'Andismake',	null, 				1),
+(7,			null,		'2016-12-10 11:00:00',	'1949-04-29',	'Daniel',		'Stringer',	'DanielKStringer@teleworm.us','Si3zahGhee',	null, 				1),
+(8,			null,		'2016-12-10 11:00:00',	'1952-10-24',	'Charles',		'Rush',		'CharlesRush@teleworm.us',	'Oith4Zothee',	null, 				1),
+(9,			null,		'2016-12-10 11:00:00',	'1988-02-25',	'Nicholas',		'Velez',	'NicholasVelez@jourrapide.com','Ia8aaj0a',	null, 				1),
+(10,		null,		'2016-12-10 11:00:00',	'1961-10-12',	'Richard',		'Kimble',	'RichardKimble@teleworm.us','Echuuqu1ye',	null, 			    1),
+(11,		null,		'2016-12-10 11:00:00',	'1983-10-18',	'Thomas',		'Villa',	'ThomasVilla@rhyta.com',	'aeti3Lekif',	null, 				1),
+(12,		null,		'2016-12-10 11:00:00',	'1969-02-07',	'May',			'Delatorre','MayDelatorre@teleworm.us',	'Eola9eim3',	null, 				1),
+(13,		null,		'2016-12-10 11:00:00',	'1944-04-06',	'Betty',		'Powe',		'BettyPowe@jourrapide.com',	'yohG8von',		null, 				1),
+(14,		null,		'2016-12-10 11:00:00',	'1980-01-13',	'Mario',		'Plummer',	'MarioPlummer@teleworm.us',	'IeJae1noo',	null, 			    1),
+(15,		null,		'2016-12-10 11:00:00',	'1949-11-10',	'Margaret',		'Swan',		'M.Swan@rhyta.com',			'Aece2zohw',	null, 				1),
+(16,		null,		'2016-12-10 11:00:00',	'1943-07-27',	'Kimberly',		'Estrada',	'K.Estrada@teleworm.us',	'Ohp0xiec',		null, 				1),
+(17,		null,		'2016-12-10 11:00:00',	'1945-03-18',	'Stanley',		'Privette',	'S.Privette@teleworm.us',	'diKeiphahj5',	null, 				1),
+(18,		null,		'2016-12-10 11:00:00',	'1936-03-25',	'Thelma',		'Bradley',	'TBradley@jourrapide.com',	'ooM0kahth',	null, 				1),
+(19,		null,		'2016-12-10 11:00:00',	'1965-06-05',	'Naomi',		'Hart',		'N.Hart@teleworm.us',		'eiTaH0mei',    null, 			    1),
+(20,		null,		'2016-12-10 11:00:00',	'1980-06-09',	'Benjamin',		'Morey',	'B.Morey@rhyta.com',		'noTi1aed1', 	null, 				1);
+
+
+INSERT INTO `viacrole` (`roleId`, `changedOn`, `createdOn`, `description`, `name`, `changedBy_userId`, `createdBy_userId`) VALUES 
+(1,	null,'2016-12-10 11:00:00',	'Rolle f�r VIAC Nutzer',	'VIAC Nutzer',	null,	1),
+(2,	null,'2016-12-10 11:00:00',	'Rolle f�r VIAC Admin',		'VIAC Admin',	null,	1),
+(3,	null,'2016-12-10 11:00:00',	'Rolle f�r VITA Nutzer',	'VITA Nutzer',	null,	1),
+(4,	null,'2016-12-10 11:00:00',	'Rolle f�r VITA Admn',		'VITA Admin',	null,	1);
+
+
+INSERT INTO `viacrole_viacauthorization`(`roles_roleId`, `authorizations_authId`) VALUES 
+(1,1),
+(2,1),
+(2,2),
+(2,3),
+(2,4),
+(2,5),
+(3,6),
+(4,6),
+(4,7),
+(4,8),
+(4,9),
+(4,10);
+
+INSERT INTO `viacuser_viacrole`(`users_userId`, `roles_roleId`) VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+(6,1),
+(7,1),
+(8,1),
+(9,1),
+(10,1),
+(11,1),
+(12,1),
+(13,1),
+(14,1),
+(15,1),
+(16,1),
+(17,1),
+(18,1),
+(19,1),
+(10,3),
+(11,3),
+(12,3),
+(13,3),
+(14,3),
+(15,3),
+(16,3),
+(17,3),
+(18,3),
+(19,3);
+

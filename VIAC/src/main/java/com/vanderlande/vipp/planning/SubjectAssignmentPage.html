@@ -1,0 +1,42 @@
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<fieldset>
+	<div wicket:id="subjectsPanel">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Themeneinteilung</h3>
+			</div>
+			<div class="panel-body" style="margin-right: auto; margin-left: auto; width:50%">
+				<form wicket:id="subjectsForm">
+				<div>
+					<label wicket:id="presentationCyclesLabel"></label>
+					<input class="form-control" type="number"
+					wicket:id="presentationCyclesInput" required="required" />
+				</div>
+				<div id="myModal" class="modal">
+
+					  <div wicket:id="info">
+					  </div>
+
+				</div>
+				<br>
+				<div>
+					<span><label wicket:id="extraCriteriaLabel"></label> <select
+						wicket:id="subjects" class="form-control"></select>
+					<br>
+					<input class="form-control" type="number"
+						wicket:id="extraCriteriaNumberInput"/></span>
+				</div>
+				<br>
+				<input class="btn btn-success" type="submit" wicket:id="submit"
+						style="float: right" />
+				<div id="indicator" style="display: none; font-size:150%; position: fixed; top: 45%; left:45%">
+			  		<img src="ajax-loader.gif" height="150px" width="150px">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</fieldset>
+	<div wicket:id="notificationDialog"></div>
+</wicket:extend>

@@ -1,0 +1,55 @@
+<wicket:extend>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<a data-toggle="collapse" href="#col1">
+				<h3 class="panel-title accordion-toggle">Person</h3>
+			</a>
+		</div>
+		<div id="col1" class="panel-body panel-collapse collapse in">
+			<form wicket:id="form">
+				<table class="dataview table table-hover table-striped"
+					wicket:id="testApplicantsTable">[table]
+				</table>
+				<br> <br>
+
+				<!-- 	<input type="button" class="btn btn-success"
+					wicket:id="downloadEligo" style="float: right; margin-left: 10px"
+					value="EligoDaten erstellen">  -->
+				<input type="button" class="btn btn-success" wicket:id="downloadPdf"
+					style="float: right; margin-left: 10px"
+					value="Teilnehmerkarten erstellen">
+				<ul class="list-group" style="width: 60%">
+					<li class="list-group-item" wicket:id="navContainer"></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<a data-toggle="collapse" href="#col2">
+				<h3 class="panel-title accordion-toggle">ELIGO-Testergebnisse
+					hochladen</h3>
+			</a>
+		</div>
+		<div id="col2" class="panel-body panel-collapse collapse">
+			Die Ergebnisse werden den Teilnehmern automatisch hinzugefügt werden.
+			Der Dateiname braucht folgendes Format:<br> <b>Eligo_EligoUsername.pdf</b>
+			<br> <br> <br>
+			<form wicket:id="eligoFileUploadForm">
+				<div wicket:id="fileInput" />
+				<input wicket:id="uploadButton" class="btn btn-success"
+					type="submit" style="float: right" value="Testergebnisse hochladen" />
+			</form>
+		</div>
+	</div>
+	<input type="button" class="btn btn-default" wicket:id="back"
+		value="Zurück" />
+
+
+	<div wicket:id="notificationDialog"></div>
+
+	<wicket:fragment wicket:id="fragment">
+		<a href="#" wicket:id="download"><span wicket:id="navItemLabel"></span></a>
+	</wicket:fragment>
+</wicket:extend>

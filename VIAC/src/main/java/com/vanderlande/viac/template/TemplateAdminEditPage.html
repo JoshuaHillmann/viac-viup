@@ -1,0 +1,51 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Template bearbeiten</h3>
+			</div>
+			<div class="panel-body">
+					<fieldset class="col-md-12">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label wicket:id="idLabel"></label> <input type="text"
+									class="form-control" wicket:id="id" readonly="readonly" />
+							</div>
+							<div class="form-group">
+								<label wicket:id="ccLabel"></label> 
+								<input type="text" class="form-control" wicket:id="ccInput" />
+							</div>
+							<div class="form-group">
+								<label wicket:id="textLabel"></label>
+								<textarea wicket:id="text" class="form-control" rows="10"></textarea>
+							</div>
+								<form wicket:id="fileUploadForm">
+							<p>
+							<div wicket:id="fileInput" class="btn btn-default" />
+
+							<input wicket:id="uploadButton" class="btn btn-default"
+								type="submit" value="Upload" />
+							</p>
+						</form>
+						<ul style="list-style: none">
+							<li wicket:id="navContainer"></li>
+						</ul>
+						</div>
+						<div class="col-md-4" style="float: right">
+							<span wicket:id="infoSpan"></span>
+						</div></div>
+					</fieldset>
+
+			</div>
+		</div>
+				<input type="submit" class="btn btn-success" wicket:id="submit"
+					style="float: right; margin-left: 10px" /> <input type="button"
+					class="btn btn-default" wicket:id="back" style="float: right"
+					value="Zurück" />
+	</form>
+	<wicket:fragment wicket:id="fragment">
+		<a href="#" wicket:id="download"><span wicket:id="navItemLabel"></span></a>
+		<span><a wicket:id="deleteLink">(Löschen)</a></span>
+	</wicket:fragment>
+</wicket:extend>

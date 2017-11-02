@@ -1,0 +1,75 @@
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<fieldset class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Azubiübersicht</h3>
+			</div>
+			<div class="panel-body">
+
+				<form wicket:id="filterForm">
+					<div wicket:id="filterPanel"></div>
+					<table class="dataview table table-hover table-striped"
+						wicket:id="tableWithFilterForm">[table]
+					</table>
+				</form>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="col-md-6">
+		<div wicket:id="addApprenticePanel">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Azubi hinzufügen</h3>
+				</div>
+				<div class="panel-body">
+					<form wicket:id="addApprenticeForm">
+						<div class="form-group">
+							<p>
+								<label wicket:id="firstnameLabel"></label>
+								<input class="form-control" type="text"
+									wicket:id="apprenticeFirstnameInput" required="required" />
+							</p>
+							<p>
+								<label wicket:id="lastnameLabel"></label>
+								<input class="form-control" type="text"
+									wicket:id="apprenticeLastnameInput" required="required" />
+							</p>
+						</div>
+						<div class="row">
+							<div class="form-group">
+
+								<div class="col-md-5">
+									<div class="form-group">
+										<label wicket:id="apprenticeshipAreaLabel"></label> <select
+											wicket:id="apprenticeshipAreas" class="form-control" required="required"></select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+
+								<div class="col-md-5">
+									<div class="form-group">
+										<label wicket:id="yearOfApprenticeshipLabel"></label> <select
+											wicket:id="yearOfApprenticeshipChoice" class="form-control" required="required"></select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<input class="btn btn-success" type="submit" wicket:id="submit"
+							style="float: right" />
+						<input class="btn btn-success" type="submit" wicket:id="cancel" value="Abbrechen"
+							style="float: left" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+
+	<div wicket:id="confirmDeleteDialog"></div>
+	<div wicket:id="notificationDialog"></div>
+	<div wicket:id="infoWindow"></div>
+</wicket:extend>

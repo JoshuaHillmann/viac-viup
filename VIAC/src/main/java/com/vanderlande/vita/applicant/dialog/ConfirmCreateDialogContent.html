@@ -1,0 +1,21 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org">
+	<div style="margin: 10px">
+		<p>Es existieren bereits Bewerber mit ähnlichen Daten (Vorname,
+			Nachname Geburtsdatum):</p>
+		<div>
+			<ul style="list-style: none">
+				<li wicket:id="applicantContainer"></li>
+			</ul>
+		</div>
+		<p>Soll trotzdem ein neuer Bewerber erstellt werden?</p>
+
+		<p>
+			<a wicket:id="confirm" class="btn btn-success">Ja</a> <a
+				wicket:id="cancel" class="btn btn-danger">Nein</a>
+		</p>
+	</div>
+	<wicket:fragment wicket:id="fragment">
+		<a href="#" target="_blank" wicket:id="applicantLink"><span
+			wicket:id="applicantItemLabel"></span></a>
+	</wicket:fragment>
+</wicket:panel>

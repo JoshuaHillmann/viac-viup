@@ -1,0 +1,59 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Rolle bearbeiten</h3>
+			</div>
+			<div class="panel-body">
+				<div class="col-md-6">
+					<div class="form-group">
+						<p>
+							<span>Name:</span>
+						</p>
+						<p>
+							<input class="form-control" type="text" wicket:id="roleName" />
+						</p>
+						<br>
+					</div>
+					<div class="form-group">
+						<p>
+							<span>Beschreibung:</span>
+						</p>
+						<p>
+							<textarea class="form-control" wicket:id="roleDescriptionInput"
+								rows="5" cols="50" style="resize: none" />
+						</p>
+						<input class="btn btn-success" type="submit" wicket:id="submit"
+							style="float: right" />
+					</div>
+				</div>
+				<div class="col-md-3">
+					<span wicket:id="group">
+						<ul style="list-style-type: none;">
+							<li wicket:id="authorizations"><input type="checkbox"
+								wicket:id="checkbox" /> <span wicket:id="label"></span></li>
+						</ul>
+					</span>
+					<br>
+					<span wicket:id="group3">
+						<ul style="list-style-type: none;">
+							<li wicket:id="authorizations3"><input type="checkbox"
+								wicket:id="checkbox3" /> <span wicket:id="label3"></span></li>
+						</ul>
+					</span>
+				</div>
+				<div class="col-md-3">
+					<span wicket:id="group2">
+						<ul style="list-style-type: none;">
+							<li wicket:id="authorizations2"><input type="checkbox"
+								wicket:id="checkbox2" /> <span wicket:id="label2"></span></li>
+						</ul>
+					</span>
+				</div>
+			</div>
+		</div>
+	</form>
+	<input type="button" class="btn btn-default" wicket:id="back"
+		value="Zurück" />
+</wicket:extend>
+

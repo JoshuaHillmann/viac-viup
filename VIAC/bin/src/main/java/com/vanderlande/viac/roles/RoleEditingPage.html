@@ -1,0 +1,25 @@
+<wicket:extend>
+
+	<form wicket:id="form">
+		<span wicket:id="group">
+			<ul style="list-style-type: none;">
+				<li wicket:id="authorizations">
+					<input type="checkbox" wicket:id="checkbox"/>
+					<span wicket:id="label"></span>
+				</li>
+			</ul>
+		</span>
+
+			<div class="form-group">
+				<p><span>Name:</span></p>
+				<p><input class="form-control" type="text" wicket:id="roleName"/></p><br>
+			</div>
+			<div class="form-group">
+				<p><span>Beschreibung:</span></p>
+				<p><textarea class="form-control" wicket:id="roleDescriptionInput" rows="5" cols="50" style="resize:none"/></p>
+				<input class="btn btn-success" type="submit" wicket:id="submit" style="float: right"/>
+			</div>
+	</form>
+
+</wicket:extend>
+

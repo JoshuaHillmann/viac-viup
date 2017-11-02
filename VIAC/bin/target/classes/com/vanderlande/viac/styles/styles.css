@@ -1,0 +1,10 @@
+#vitaButton{
+	height: 200px;
+	width: 200px;
+	color: white;
+	background-color: #598ecc;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 50px;
+	line-height: 200px;
+}

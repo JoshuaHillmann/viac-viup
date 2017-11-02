@@ -1,0 +1,77 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<fieldset>
+
+			<legend>Details</legend>
+			<div class="form-group">
+				<label wicket:id="firstnameLabel"></label> <input type="text"
+					class="form-control" wicket:id="firstname" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="lastnameLabel"></label> <input type="text"
+					class="form-control" wicket:id="lastname" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="mailLabel"></label> <input type="text"
+					class="form-control" wicket:id="mail" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="birthdayLabel"></label> <input type="text"
+					class="form-control" wicket:id="birthday"
+					placeholder="Bitte wählen" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="phoneLabel"></label> <input type="text"
+					class="form-control" wicket:id="phone" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="streetLabel"></label> <input type="text"
+					class="form-control" wicket:id="street" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="cityLabel"></label> <input type="text"
+					class="form-control" wicket:id="city" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="postalCodeLabel"></label> <input type="text"
+					class="form-control" wicket:id="postalCode" />
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="statusLabel"></label> <input wicket:id="status"
+					class="form-control"></input>
+			</div>
+
+			<div class="form-group">
+				<label wicket:id="careerLabel"></label> <input wicket:id="career"
+					class="form-control"></input>
+			</div>
+
+		</fieldset>
+		
+		<legend>Dokumente</legend>
+			<ul>
+				<li wicket:id="navContainer"></li>
+            </ul>
+
+		<input type="submit" class="btn btn-success" wicket:id="accept"
+			style="float: right; margin-left: 10px" value="Annehmen" /> <input
+			type="button" class="btn btn-danger" wicket:id="reject"
+			style="float: right; margin-left: 10px" value="Ablehnen" /> <input
+			type="button" class="btn btn-warning" wicket:id="edit"
+			style="float: right; margin-left: 10px" value="Bearbeiten" /> <input
+			type="button" class="btn btn-default" wicket:id="back"
+			style="float: right; margin-left: 10px" value="Zurück" />
+
+	</form>
+<wicket:fragment wicket:id="fragment">
+	<a href="#" style="color: black" wicket:id="download"><span wicket:id="navItemLabel"></span></a>
+</wicket:fragment>
+</wicket:extend>

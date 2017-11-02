@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="connection.url">jdbc:mysql://localhost:3306/viac</property> <!-- jdbc:mysql://10.153.25.67/viac -->
+		<property name="connection.username">root</property> <!-- viac_admin -->
+		<property name="connection.password"></property> <!-- gambit -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<property name="show_sql">false</property>
+
+		<property name="format_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- c3p0 connection pool -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<mapping class="com.vanderlande.viac.model.VIACRole" />
+		<mapping class="com.vanderlande.viac.model.VIACUser" />
+		<mapping class="com.vanderlande.viac.model.VIACUserPasswordReset" />
+		<mapping class="com.vanderlande.viac.model.VIACAuthorization" />
+		<mapping class="com.vanderlande.viac.model.VIACConfiguration" />
+		<mapping class="com.vanderlande.viac.model.MailTemplate" />
+		<mapping class="com.vanderlande.viac.model.MailDocument" />
+
+		<mapping class="com.vanderlande.vita.model.VITAApplicant" />
+		<mapping class="com.vanderlande.vita.model.VITAApplicantStatus" />
+		<mapping class="com.vanderlande.vita.model.VITACareer" />
+		<mapping class="com.vanderlande.vita.model.VITADocument" />
+		<mapping class="com.vanderlande.vita.model.VITAEligoTest" />
+		<mapping class="com.vanderlande.vita.model.VITATestStatus" />
+		<mapping class="com.vanderlande.vita.model.VITAHistoricStatus" />
+		
+		<mapping class="com.vanderlande.vipp.model.VIPPApprenticeshipArea" />
+		<mapping class="com.vanderlande.vipp.model.VIPPApprentice" />
+		<mapping class="com.vanderlande.vipp.model.VIPPGroup" />
+		<mapping class="com.vanderlande.vipp.model.VIPPPerson" />
+		<mapping class="com.vanderlande.vipp.model.VIPPPresentationCycle" />
+		<mapping class="com.vanderlande.vipp.model.VIPPPresentation" />
+		<mapping class="com.vanderlande.vipp.model.VIPPSubject" />
+		<mapping class="com.vanderlande.vipp.model.VIPPSubjectArea" />
+		<mapping class="com.vanderlande.vipp.model.VIPPLearningUnit" />
+		<mapping class="com.vanderlande.vipp.model.VIPPDocument" />
+		<mapping class="com.vanderlande.vipp.model.VIPPPresentedOn" />
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,28 @@
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<fieldset>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Administration</h3>
+			</div>
+			<div class="panel-body">
+			<form wicket:id="fileUploadForm">
+				<p style="font-size:125%">
+					Hier können die Themenliste und die Informationen
+					über die Auszubildenden eingelesen werden.<br>
+				</p>
+				<p>
+					<div wicket:id="fileInput" class="btn btn-default" />
+	
+					<input wicket:id="uploadButton" class="btn btn-default"
+						type="submit" value="Upload" />
+					<div id="indicator" style="display: none; font-size:150%; position: absolute; top: 50%; left:45%">
+				  		<img src="ajax-loader.gif" height="150px" width="150px">
+					</div>
+				</p>
+			</form>
+			</div>
+		</div>
+	</fieldset>
+	<div wicket:id="notificationDialog"></div>
+</wicket:extend>

@@ -1,0 +1,24 @@
+<wicket:extend>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Nutzerübersicht</h3>
+		</div>
+		<div class="panel-body">
+			<form wicket:id="filterForm">
+				<fieldset>
+					<!-- 	Name: <input type="text" class="form-control" wicket:id="nameFilter"/>
+		Rolle: <input type="text" class="form-control" wicket:id="roleFilter"/> -->
+					<div wicket:id="filterPanel"></div>
+				</fieldset>
+
+				<table class="dataview table table-hover table-striped" wicket:id="tableWithFilterForm">[table]
+				</table>
+			</form>
+		</div>
+	</div>
+	<input type="button" class="btn btn-success"
+		wicket:id="createNewUserButton" style="float: right"
+		value="Neuen Nutzer erstellen" />
+
+	<div wicket:id="confirmDeleteDialog"></div>
+</wicket:extend>

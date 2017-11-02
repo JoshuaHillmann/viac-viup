@@ -1,0 +1,26 @@
+<wicket:extend>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	
+	<form wicket:id="filterForm">
+		Name: <input type="text" class="form-control" wicket:id="filterName"/>
+
+			<table class="dataview table table-hover" wicket:id="tableWithFilterForm">[table]</table>
+		</form>
+	<br><br><br>
+	<fieldset>
+		<form wicket:id="addRoleForm">
+			<legend>Rolle hinzufügen </legend>
+			<div class="form-group">
+			<p><span>Name:</span></p>
+			<p><input class="form-control" type="text" wicket:id="roleNameInput"/></p><br>
+			</div>
+			<div class="form-group">
+			<p><span>Beschreibung:</span></p>
+			<p><textarea class="form-control" wicket:id="roleDescriptionInput" rows="5" cols="50" style="resize:none"/></p>
+			<input class="btn btn-success" type="submit" wicket:id="submit" style="float: right"/>
+			</div>
+		</form>
+	</fieldset>
+	
+	<div wicket:id="confirmDeleteDialog"></div>
+</wicket:extend>

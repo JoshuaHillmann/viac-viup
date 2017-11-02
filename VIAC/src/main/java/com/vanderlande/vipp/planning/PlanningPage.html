@@ -1,0 +1,50 @@
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<fieldset>
+	<div wicket:id="buildGroupsPanel">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Gruppeneinteilung</h3>
+			</div>
+			<br>
+			<div class="panel-body" style="margin-right: auto; margin-left: auto; width:50%">
+			<label wicket:id="personAmount"></label>
+				<form wicket:id="buildGroupsForm">
+				<div>
+					<label wicket:id="groupCountLabel"></label>
+					<input class="form-control" type="number"
+					wicket:id="groupCountInput" required="required" />
+				</div>
+				<br>
+				<div>
+					<label wicket:id="groupByLabel"></label> <select
+						wicket:id="groupBy" class="form-control" required></select>
+				</div>
+				<br>
+				<div>
+					<label wicket:id="needSpecialGroupLabel" title="Soll eine extra Gruppe außerhalb des Zuteilungskriteriums hinzugefügt werden"></label>
+					<span wicket:id="yesNoGroup">
+						<input type="radio" wicket:id="yes" style="margin-left: 15px"/><span>Ja</span>
+						<input type="radio" wicket:id="no" style="margin-left: 30px"/><span>Nein</span>
+					</span>
+				</div>
+				<br>
+				<div>
+					<label wicket:id="groupLabel"></label>
+					<div wicket:id="yearGroup">
+						<input type="radio"/>1<br>
+						<input type="radio"/>2<br>
+						<input type="radio"/>3<br>
+					</div>
+				</div>
+				<input class="btn btn-success" type="submit" wicket:id="submit"
+						style="float: right; float:top" />
+				<div id="indicator" style="display: none; font-size:150%; position: absolute; top: 45%; left:45%">
+			  		<img src="ajax-loader.gif" height="150px" width="150px">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</fieldset>
+</wicket:extend>

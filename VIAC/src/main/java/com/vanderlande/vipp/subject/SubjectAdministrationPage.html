@@ -1,0 +1,85 @@
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<fieldset class="col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Themenübersicht</h3>
+			</div>
+			<div class="panel-body">
+
+				<form wicket:id="filterForm">
+					<div wicket:id="filterPanel"></div>
+					<table class="dataview table table-hover table-striped"
+						wicket:id="tableWithFilterForm">[table]
+					</table>
+				</form>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="col-md-4">
+		<div wicket:id="addSubjectPanel">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Thema hinzufügen</h3>
+				</div>
+				<div class="panel-body">
+					<form wicket:id="addSubjectForm">
+						<div class="form-group">
+							<label wicket:id="nameLabel"></label>
+							<input class="form-control" type="text"
+								wicket:id="subjectNameInput" required="required" />
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group">
+									<div class="form-group">
+										<label wicket:id="subjectLabel"></label> <select
+											wicket:id="subjects" class="form-control" required></select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group">
+								<label wicket:id="unitsLabel"></label>
+									<span wicket:id="group">
+										<ul style="list-style-type: none;">
+											<li wicket:id="learningUnits"><input type="checkbox"
+												wicket:id="checkbox" /> <span wicket:id="unitName"></span></li>
+										</ul>
+									</span>
+								</div>
+							</div>
+						</div>
+												<div class="panel-body">
+							<div class="row">
+								<div class="form-group">
+								<label wicket:id="areasLabel"></label>
+									<span wicket:id="apprenticeshipAreasCheck">
+										<ul style="list-style-type: none;">
+											<li wicket:id="apprenticeshipAreas"><input type="checkbox"
+												wicket:id="checkbox" /> <span wicket:id="areaName"></span></li>
+										</ul>
+									</span>
+								</div>
+							</div>
+						</div>
+						<label wicket:id="isFinalExamRelevantLabel"></label>
+						<span wicket:id="yesNoGroup">
+							<input type="radio" wicket:id="yes" style="margin-left: 15px"/><span>Ja</span>
+							<input type="radio" wicket:id="no" style="margin-left: 30px"/><span>Nein</span>
+						</span>
+						<input class="btn btn-success" type="submit" wicket:id="submit"
+							style="float: right" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+
+	<div wicket:id="confirmDeleteDialog"></div>
+	<div wicket:id="notificationDialog"></div>
+	<div wicket:id="infoWindow"></div>
+</wicket:extend>

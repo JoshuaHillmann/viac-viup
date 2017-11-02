@@ -1,0 +1,36 @@
+<wicket:panel>
+	<nav wicket:id="backgroundPanel" role="navigation" class="navbar navbar-default" 
+	style="background-image: none; background-color:#ef7b10; padding-right: 10px; margin-bottom: 0px;">
+	
+	  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      				 	<a wicket:id="logoLink"><img wicket:id="logo" alt="viac-logo" style="zoom:0.8"/></a>
+		    </div>
+	<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li wicket:id="navContainer"></li>
+            </ul>
+
+            
+			<ul class="nav navbar-nav navbar-right">
+
+				 <li>	<a wicket:id="usernameLink"  style="color: white"><span wicket:id="username">USERNAME</span></a></li>
+	             <li><a wicket:id="logoutLink"  style="color: white">Logout</a></li>
+            </ul>			
+		</div>
+	</div>
+</nav>
+</wicket:panel>
+
+
+
+<wicket:fragment wicket:id="fragment">
+	<a href="#" style="color: white" wicket:id="navLink"><span wicket:id="navItemLabel"></span></a>
+</wicket:fragment>

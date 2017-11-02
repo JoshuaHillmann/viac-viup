@@ -1,0 +1,70 @@
+<wicket:extend>
+<form wicket:id="form">
+	<fieldset>
+	
+	<legend>Bewerber bearbeiten</legend>
+	<div class="form-group">
+		<label wicket:id="firstnameLabel"></label>
+		<input type="text" class="form-control" wicket:id="firstname"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="lastnameLabel"></label>
+		<input type="text" class="form-control" wicket:id="lastname"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="mailLabel"></label>
+		<input type="text" class="form-control" wicket:id="mail"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="birthdayLabel"></label>
+		<input type="text" class="form-control" wicket:id="birthday" placeholder="Bitte wählen"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="phoneLabel"></label>
+		<input type="text" class="form-control" wicket:id="phone"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="streetLabel"></label>
+		<input type="text" class="form-control" wicket:id="street"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="cityLabel"></label>
+		<input type="text" class="form-control" wicket:id="city"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="postalCodeLabel"></label>
+		<input type="text" class="form-control" wicket:id="postalCode"/>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="statusLabel"></label>
+		<select wicket:id="status" class="form-control"></select>
+		</div>
+		
+		<div class="form-group">
+		<label wicket:id="careerLabel"></label>
+		<select wicket:id="career" class="form-control"></select>
+		</div>
+		
+	</fieldset>
+	<br>
+	<legend>Dateien anhängen</legend>
+	<form wicket:id="fileUploadForm">
+	<p>
+		<div wicket:id="fileInput" class="btn btn-default" />
+		
+		<input wicket:id="uploadButton"  class="btn btn-default"type="submit" value="Upload"/>
+	</p>
+</form>
+	<input type="submit" class="btn btn-success" wicket:id="submit" style="float: right; margin-left: 10px"/>
+	<input type="button" class="btn btn-default" wicket:id="back" style="float: right" value="Zurück">
+</form>
+
+</wicket:extend>

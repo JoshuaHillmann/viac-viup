@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>VIAC - Login</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+	crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<style type="text/css">
+.Absolute-Center {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+	width: 50%;
+	height: 50%;
+	min-width: 400px;
+	max-width: 600px;
+	padding: 40px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="Absolute-Center is-Responsive">
+				<div class="col-sm-12 col-md-10 col-md-offset-1  panel panel-default">
+					<div class="panel-body">
+						<div class="alert alert-danger" wicket:id="errorPassword">
+							Username oder Passwort ist falsch.</div>
+						<div class="alert alert-danger" wicket:id="errorBanned">
+							Nutzer ist gesperrt.</div>
+						<form wicket:id="form">
+							<strong>Bitte gib hier deine Login-Daten ein:</strong><br>
+							<br> <input class="form-control" type="text"
+								wicket:id="loginName" autofocus="autofocus"
+								placeholder="Username" required /><br /> <input
+								class="form-control" type="password" wicket:id="loginPassword"
+								placeholder="Passwort" required /><br />
+							<div style="text-align: right;">
+								<a wicket:id="requestNewPassword" class="btn btn-warning">Passwort
+									zurücksetzen</a> <input type="submit" class="btn btn-success"
+									wicket:id="loginButton" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

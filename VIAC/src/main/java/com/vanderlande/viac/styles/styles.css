@@ -1,0 +1,46 @@
+#vitaButton{
+	height: 200px;
+	width: 200px;
+	color: white;
+	background-color: #598ECC;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 50px;
+	line-height: 200px;
+}
+#vippButton{
+	height: 200px;
+	width: 200px;
+	color: white;
+	background-color: #b02727;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 50px;
+	line-height: 200px;
+}
+.w_captionText
+{
+	display:none;
+}
+.moduleLink{
+	cursor: pointer;
+	float: left;
+	margin-right: 15px;
+}
+
+
+.accordion-toggle:after {
+	cursor: pointer;
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content:"\2212";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+
+.collapsed .accordion-toggle, 
+.collapsed .accordion-toggle:after {
+	
+    /* symbol for "collapsed" panels */
+    content:"\e114";   /* adjust as needed, taken from bootstrap.css */
+}

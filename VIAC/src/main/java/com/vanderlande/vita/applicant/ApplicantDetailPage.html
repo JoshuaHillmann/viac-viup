@@ -1,0 +1,261 @@
+<wicket:extend>
+	<div wicket:id="confirmDeleteDialog"></div>
+	<form wicket:id="form">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a data-toggle="collapse" href="#col1">
+							<h3 class="panel-title accordion-toggle">Person</h3>
+						</a>
+					</div>
+					<div id="col1" class="panel-body panel-collapse collapse in">
+						<div class="row">
+
+							<div class="col-md-5">
+								<div class="form-group">
+									<label wicket:id="firstnameLabel"></label> <input type="text"
+										class="form-control" wicket:id="firstname" required />
+								</div>
+							</div>
+
+							<div class="col-md-5">
+								<div class="form-group">
+									<label wicket:id="lastnameLabel"></label> <input type="text"
+										class="form-control" wicket:id="lastname" required />
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<label wicket:id="genderLabel"></label> <select type="text"
+										class="form-control" wicket:id="gender" required></select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group">
+
+								<div class="col-md-5">
+									<div class="form-group">
+										<label wicket:id="careerLabel"></label> <select
+											wicket:id="career" class="form-control" required></select>
+									</div>
+								</div>
+
+
+								<div class="col-md-5">
+									<div class="form-group">
+										<label wicket:id="statusLabel"></label> <select
+											wicket:id="status" class="form-control" required></select>
+									</div>
+								</div>
+
+
+								<div class="col-md-2">
+									<div class="form-group">
+										<label wicket:id="appliedOnLabel"></label> <input type="text"
+											class="form-control" wicket:id="appliedOn" required />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a class="collapsed" data-toggle="collapse" href="#col2">
+							<h3 class="panel-title accordion-toggle">Weitere Details</h3>
+						</a>
+					</div>
+					<div id="col2" class="panel-body panel-collapse collapse">
+						<div class="row">
+							<div class="col-md-9">
+
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label wicket:id="birthdayLabel"></label> <input type="text"
+												class="form-control" wicket:id="birthday" required />
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label wicket:id="mailLabel"></label> <input type="text"
+												class="form-control" wicket:id="mail" required />
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label wicket:id="phoneLabel"></label> <input type="text"
+												class="form-control" wicket:id="phone" />
+										</div>
+									</div>
+								</div>
+
+
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label wicket:id="streetLabel"></label> <input type="text"
+												class="form-control" wicket:id="street" />
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label wicket:id="cityLabel"></label> <input type="text"
+												class="form-control" wicket:id="city" />
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label wicket:id="postalCodeLabel"></label> <input
+												type="text" class="form-control" wicket:id="postalCode"
+												maxlength="5" />
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label wicket:id="commentLabel"></label>
+									<textarea class="form-group form-control"
+										wicket:id="commentArea" name="comment"
+										style="resize: none; width: 100%; overflow-y: scroll; height: 110px"></textarea>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a class="collapsed" data-toggle="collapse" href="#col3">
+							<h3 class="panel-title accordion-toggle">Eligo Daten</h3>
+						</a>
+					</div>
+					<div id="col3" class="panel-body panel-collapse collapse">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<label wicket:id="eligoUsernameLabel"></label> <input
+										type="text" class="form-control" wicket:id="eligoUsername" />
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="form-group">
+									<label wicket:id="eligoPasswordLabel"></label> <input
+										type="text" class="form-control" wicket:id="eligoPassword" />
+								</div>
+							</div>
+
+
+							<div class="col-md-3">
+								<div class="form-group">
+									<label wicket:id="eligoFirstnameLabel"></label> <input
+										type="text" class="form-control" wicket:id="eligoFirstname" />
+								</div>
+							</div>
+
+
+							<div class="col-md-3">
+								<div class="form-group">
+									<label wicket:id="eligoLastnameLabel"></label> <input
+										type="text" class="form-control" wicket:id="eligoLastname" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-4" wicket:id="documentsPanel">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a class="collapsed" data-toggle="collapse" href="#col4">
+							<h3 class="panel-title accordion-toggle">Dokumente</h3>
+						</a>
+					</div>
+					<div id="col4" class="panel-body panel-collapse collapse">
+
+						<form wicket:id="fileUploadForm">
+							<p>
+							<div wicket:id="fileInput" class="btn btn-default" />
+
+							<input wicket:id="uploadButton" class="btn btn-default"
+								type="submit" value="Upload" />
+							</p>
+						</form>
+
+						<div>
+							<ul>
+								<li wicket:id="navContainer"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="col-md-8" wicket:id="statusHistoryPanel">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a class="collapsed" data-toggle="collapse" href="#col5">
+							<h3 class="panel-title accordion-toggle">Status Historie</h3>
+						</a>
+					</div>
+					<div id="col5" class="panel-body panel-collapse collapse">
+
+
+						<table class="dataview table table-hover table-striped"
+							wicket:id="tableWithFilterForm">[table]
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<input type="submit" class="btn btn-success" wicket:id="accept"
+			style="float: right; margin-left: 10px; width: 100px"
+			value="Annehmen" /> <input type="button" class="btn btn-danger"
+			wicket:id="reject"
+			style="float: right; margin-left: 10px; width: 100px"
+			value="Ablehnen" /> <input type="submit" class="btn btn-info"
+			wicket:id="save"
+			style="float: right; margin-left: 10px; width: 100px"
+			value="Speichern" /> <input type="submit" class="btn btn-warning"
+			wicket:id="edit"
+			style="float: right; margin-left: 10px; width: 100px"
+			value="Bearbeiten" /> <input type="button" class="btn btn-default"
+			wicket:id="back"
+			style="float: right; margin-left: 10px; width: 100px" value="Zurück" />
+	</form>
+	<wicket:fragment wicket:id="fragment">
+		<a href="#" wicket:id="download"><span wicket:id="navItemLabel"></span></a>
+		<span><a wicket:id="deleteLink">(Löschen)</a></span>
+	</wicket:fragment>
+</wicket:extend>

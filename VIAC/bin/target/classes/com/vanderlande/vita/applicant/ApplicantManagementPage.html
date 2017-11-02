@@ -1,0 +1,23 @@
+
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+	<form wicket:id="filterForm">
+		<fieldset>
+			<legend>Filter</legend>
+			Vorame: <input type="text" class="form-control"
+				wicket:id="filterName" />
+		</fieldset>
+		<table class="dataview table table-hover"
+			wicket:id="tableWithFilterForm">[table]
+		</table>
+	</form>
+	<br>
+	<br>
+	<br>
+
+	<input type="button" class="btn btn-success"
+		wicket:id="createNewApplicantButton" style="float: right"
+		value="Neuen Bewerber erstellen" />
+	<div wicket:id="confirmDeleteDialog"></div>
+</wicket:extend>

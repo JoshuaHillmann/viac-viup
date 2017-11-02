@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">	
+	<title>VIAC - Login</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" crossorigin="anonymous"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="panel panel-default col-md-10" style="width:90%; margin: 5% 5%;">
+	<div class="panel-body">
+		<div class="alert alert-danger" wicket:id="errorPassword">
+			Username oder Passwort ist falsch.
+		</div>
+		<form wicket:id="form">
+			<strong>Bitte gib hier deine Login-Daten ein:</strong><br><br>
+			<input class="form-control" type="text" wicket:id="loginName" autofocus="autofocus" placeholder="Username" required/><br/>
+			<input class="form-control"  type="password" wicket:id="loginPassword" placeholder="Passwort" required/><br/>
+			<div style="text-align: right;">
+				<a wicket:id="requestNewPassword" class="btn btn-warning">Passwort zurücksetzen</a>
+				<input type="submit" class="btn btn-success" wicket:id="loginButton"/>	
+			</div>		
+		</form>
+	</div>
+</div>	
+</body>
+</html>

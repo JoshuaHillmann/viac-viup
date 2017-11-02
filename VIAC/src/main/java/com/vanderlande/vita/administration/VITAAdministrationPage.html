@@ -1,0 +1,62 @@
+<wicket:extend>
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Karrierenübersicht</h3>
+			</div>
+			<div class="panel-body">
+				<table class="dataview table table-hover table-striped"
+					wicket:id="tableWithFilterForm">[table]
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div wicket:id="addCareerPanel">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Neue Karriere anlegen</h3>
+				</div>
+				<div class="panel-body">
+					<form wicket:id="addCareerForm">
+						<div class="input-group">
+							<input class="form-control" type="text"
+								wicket:id="newCareerNameInput" placeholder="Name" required /> <span
+								class="input-group-btn"> <input class="btn btn-success"
+								type="submit" wicket:id="submit" style="float: right" />
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div wicket:id="editCareerPanel">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Karriere bearbeiten</h3>
+				</div>
+				<div class="panel-body">
+					<form wicket:id="editCareerForm">
+						<div class="input-group">
+							<input class="form-control" type="text"
+								wicket:id="editCareerNameInput" required /> <span
+								class="input-group-btn"> <input class="btn btn-success"
+								type="submit" wicket:id="edit" style="float: right" />
+							</span> <span class="input-group-btn"> <input
+								class="btn btn-danger" type="button" wicket:id="delete"
+								value="archivieren" style="float: left" /></span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div wicket:id="confirmDeleteDialog"></div>
+</wicket:extend>

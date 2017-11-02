@@ -1,0 +1,47 @@
+<wicket:extend>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Testübersicht</h3>
+			</div>
+			<div class="panel-body">
+				<form wicket:id="filterForm">
+					<div wicket:id="filterPanel" style="margin-left: -15px;"></div>
+
+					<table class="dataview table table-hover table-striped"
+						wicket:id="tableWithFilterForm">[table]
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div wicket:id="addTestPanel">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Neuen Test anlegen</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<form wicket:id="addTestForm">
+							<div class="form-group">
+								<span>Name:</span>
+								<div class="input-group">
+									<input class="form-control" type="text"
+										wicket:id="testNameInput" required /> <span
+										class="input-group-btn"> <input class="btn btn-success"
+										type="submit" wicket:id="submit" style="float: right" />
+									</span>
+								</div>
+							</div>
+						</form>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div wicket:id="confirmDeleteDialog"></div>
+</wicket:extend>

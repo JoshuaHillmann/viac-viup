@@ -1,0 +1,39 @@
+<wicket:extend>
+<form wicket:id="form">
+	<div class="alert alert-danger" wicket:id="errorPassword">
+			Das Passwort muss mindestens 8 Zeichen haben.
+	</div>
+	<div class="alert alert-danger" wicket:id="errorPasswordCompare">
+			Die Passwörter stimmen nicht überein.
+	</div>
+	<div class="alert alert-danger" wicket:id="errorChange">
+			Ein unbekannter Fehler ist beim Ändern des Nutzers aufgetreten.
+	</div>
+	<div class="alert alert-success" wicket:id="successChange">
+			Die Änderungen wurden erfolgreich gespeichert.
+	</div>
+	<fieldset>
+	<legend>Profil bearbeiten</legend>
+	<div class="form-group">
+		Hallo <label wicket:id="firstnameLabel"></label> <label wicket:id="lastnameLabel"></label>.
+	</div>
+	
+	<div class="form-group">
+		<label wicket:id="usernameLabel"></label>
+		<input type="text" class="form-control" wicket:id="username"/>
+	</div>
+	<br>
+	<div class="form-group">
+		<label wicket:id="passwordLabel"></label>
+		<input type="password" class="form-control" wicket:id="password" pattern=".{0}|.{8,}" title="Leer oder mindestens 8 Zeichen."/>
+	</div>
+	
+	<div class="form-group">
+		<label wicket:id="repeatPasswordLabel"></label>
+		<input type="password" class="form-control" wicket:id="repeatPassword" pattern=".{0}|.{8,}" title="Leer oder mindestens 8 Zeichen."/>
+	</div>
+	</fieldset>
+	<input type="submit" class="btn btn-success" wicket:id="submit" style="float: right; margin-left: 10px"/>
+	<input type="button" class="btn btn-default" wicket:id="back" style="float: right" value="Zurück"/>
+</form>
+</wicket:extend>
